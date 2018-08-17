@@ -1,0 +1,35 @@
+---
+spring:
+  profiles: serviceregistry1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: serviceregistry1
+  client:
+    serviceUrl:
+      defaultZone: http://serviceregistry2:8762/eureka/,http://serviceregistry3:8763/eureka/      # 将自己注册到peer2这个Eureka上面去
+
+---
+spring:
+  profiles: serviceregistry2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: serviceregistry2
+  client:
+    serviceUrl:
+      defaultZone: http://serviceregistry1:8761/eureka/,http://serviceregistry3:8763/eureka/
+
+---
+spring:
+  profiles: serviceregistry3
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: serviceregistry3
+  client:
+    serviceUrl:
+      defaultZone: http://serviceregistry1:8761/eureka/,http://serviceregistry2:8762/eureka/

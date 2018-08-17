@@ -26,7 +26,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.artgeektech.househub2.EurekaApplication</mainClass>
+                    <mainClass>com.artgeektech.iotmicroservices.EurekaServerApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efacc0a4-fad1-4fb5-94c4-6d77d05b7968" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/guxiong.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudsetup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/etc-hosts-need-modify.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-registry/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="efacc0a4-fad1-4fb5-94c4-6d77d05b7968" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/serviceregistry/target/" />
@@ -44,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service-registry/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="153">
+              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -75,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etc-hosts-need-modify.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="etc-hosts-need-modify.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/etc-hosts-need-modify.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="82" lean-forward="true" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+              <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -132,9 +124,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="353" />
+    <option name="x" value="388" />
     <option name="y" value="-1417" />
-    <option name="width" value="1614" />
+    <option name="width" value="1579" />
     <option name="height" value="1417" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -331,15 +323,15 @@
       <option name="presentableId" value="Default" />
       <updated>1534485508611</updated>
       <workItem from="1534485510083" duration="1724000" />
-      <workItem from="1534526791877" duration="6454000" />
+      <workItem from="1534526791877" duration="6730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8178000" />
+    <option name="totallyTimeSpent" value="8454000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="353" y="-1417" width="1614" height="1417" extended-state="0" />
+    <frame x="388" y="-1417" width="1579" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -350,12 +342,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34015152" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34015152" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32923833" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.47010648" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.46969697" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25508904" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26089785" />
       <window_info anchor="bottom" id="Problems" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
@@ -476,13 +468,6 @@
     <entry file="file://$PROJECT_DIR$/service-registry/src/main/resources/application-single.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-registry/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cloudsetup.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -493,7 +478,14 @@
     <entry file="file://$PROJECT_DIR$/etc-hosts-need-modify.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="82" lean-forward="true" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-registry/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>

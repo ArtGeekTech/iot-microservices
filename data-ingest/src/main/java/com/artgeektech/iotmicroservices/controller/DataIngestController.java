@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@RequestMapping("/iot/airdata")
 public class DataIngestController {
 
     private static final Logger logger = LoggerFactory.getLogger(DataIngestController.class);
 
-    @PostMapping("/iot/airdata")
+    @PostMapping("/ingest")
     public AirData ingest(@RequestBody AirData airData) {
         logger.info(airData.toString());
         return airData;

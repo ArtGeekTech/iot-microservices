@@ -11,6 +11,7 @@
         <module>service-registry</module>
         <module>data-ingest</module>
         <module>data-simulator</module>
+        <module>data-broker</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -1,15 +1,13 @@
-package com.artgeektech.iotmicroservices.model;
+package com.artgeektech.iotmicroservices;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AirData implements Serializable {
+public class AirData {
     private double temperature;
     private double humidity;
     private double pm2p5;

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: data-ingest
+
+server:
+  port: 9001                    # 指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: data-ingest         # 指定该Eureka实例的主机名
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/

@@ -1,4 +1,4 @@
-package com.artgeektech.iotmicroservices.model;
+package com.artgeektech.iotmicroservices;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

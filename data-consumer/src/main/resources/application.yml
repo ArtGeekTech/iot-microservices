@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: data-consumer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 9002                    # 指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: data-consumer         # 指定该Eureka实例的主机名
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/
+
+app:
+  exchange:
+    name: DataExchange
+  queue:
+    name: DataQueue
+  routing:
+    key: airdata.ingested
+

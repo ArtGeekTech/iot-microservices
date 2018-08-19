@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import java.sql.Timestamp;
+
 
 @RestController
 @RequestMapping("/iot/airdata")
@@ -26,13 +29,14 @@ public class DataIngestController {
     private Exchange exchange;
 
     @PostMapping("/ingest")
-    public AirData ingest(@RequestBody AirData airData) {
+    public AirData ingest(@Valid @RequestBody AirData airData) {
         preprocess(airData);
-        rabbitTemplate.convertAndSend(exchange.getName(), routingKey, airData);
+        rabbitTemplate.convertAndSend(exchange.getName(), routingKey, airData.toString());
         logger.info(airData.toString());
-        logger.info("" + airData.getTemperature());
         return airData;
     }
 
-    private void preprocess(AirData airData) {}
+    private void preprocess(AirData airData) {
+        airData.setTimestamp(new Timestamp(System.currentTimeMillis()));
+    }
 }

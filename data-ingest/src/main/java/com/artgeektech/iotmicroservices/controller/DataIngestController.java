@@ -1,5 +1,6 @@
 package com.artgeektech.iotmicroservices.controller;
 
+import com.artgeektech.iotmicroservices.Constants;
 import com.artgeektech.iotmicroservices.model.AirData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,6 @@ import java.sql.Timestamp;
 public class DataIngestController {
 
     private static final Logger logger = LoggerFactory.getLogger(DataIngestController.class);
-    private static final String routingKey = "airdata.ingested";
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -31,8 +31,8 @@ public class DataIngestController {
     @PostMapping("/ingest")
     public AirData ingest(@Valid @RequestBody AirData airData) {
         preprocess(airData);
-        rabbitTemplate.convertAndSend(exchange.getName(), routingKey, airData.toString());
-        logger.info(airData.toString());
+        rabbitTemplate.convertAndSend(exchange.getName(), Constants.ROUTING_KEY, airData);
+        logger.info("ingested data: " + airData.toString());
         return airData;
     }
 

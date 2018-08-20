@@ -1,2 +1,0 @@
-# IoT Microservices Local Hosts
-127.0.0.1 serviceregistry1 serviceregistry2 serviceregistry3 serviceregistry service-registry

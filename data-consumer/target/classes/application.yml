@@ -6,6 +6,13 @@ spring:
     port: 5672
     username: guest
     password: guest
+  data:
+    mongodb:
+      host: localhost
+      port: 27072
+      database: airdata-db
+      username: root
+      password: password
 
 server:
   port: 9002                    # 指定该Eureka实例的端口
@@ -16,12 +23,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://service-registry:8761/eureka/
-
-app:
-  exchange:
-    name: DataExchange
-  queue:
-    name: DataQueue
-  routing:
-    key: airdata.ingested
-

@@ -1,10 +1,11 @@
 package com.artgeektech.iotmicroservices.controller;
 
+import com.artgeektech.iotmicroservices.Constants;
+import com.artgeektech.iotmicroservices.model.AirData;
+import com.artgeektech.iotmicroservices.repository.AirDataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.core.Exchange;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,21 +15,37 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataConsumerController {
     private static final Logger logger = LoggerFactory.getLogger(DataConsumerController.class);
-    private static final String routingKey = "airdata.ingested";
 
     @Autowired
-    private RabbitTemplate rabbitTemplate;
+    private AirDataRepository airDataRepository;
 
-    @Autowired
-    private Exchange exchange;
+    @RabbitListener(queues = Constants.QUEUE_NAME)
+    public void process(AirData airData) {
 
-    @RabbitListener(queues="DataQueue")
-    public void receive1(String message) {
-        logger.info("Received message '{}'", message);
+        logger.info("Received message from MQ '{}'", airData);
+
+        // simple rule engine handling
+        if (airData.getTemperature() > 50) {
+            triggerActionAlert("Temperature too high!!");
+        }
+        if (airData.getCo2() > 50) {
+            triggerActionAlert("CO2 too high!!!");
+        }
+        if (airData.getPm2p5() > 50) {
+            triggerActionAlert("Too much Dust!!!");
+        }
+
+        // save to DB
+        airDataRepository.save(airData);
+        logger.info("Saved message to Mongo DB '{}'", airData);
+        for (AirData data: airDataRepository.findAll()) {
+            System.out.println("printing Mongo DB");
+            System.out.println(data);
+            System.out.println(data.toString());
+        }
     }
 
-//    @RabbitListener(queues="DataQueue")
-//    public void receive2(AirData message) {
-//        logger.info("Received message '{}'", message.toString());
-//    }
+    private void triggerActionAlert(String msg) {
+        System.out.println("Sending the Email Alert: " + msg);
+    }
 }

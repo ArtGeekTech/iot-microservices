@@ -8,7 +8,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -35,5 +35,5 @@ public class AirData implements Serializable {
     @Max(100)
     private Double co2;
 
-    private Timestamp timestamp;
+    private Date timestamp;
 }

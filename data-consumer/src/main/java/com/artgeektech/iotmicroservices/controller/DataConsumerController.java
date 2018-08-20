@@ -38,14 +38,11 @@ public class DataConsumerController {
         // save to DB
         airDataRepository.save(airData);
         logger.info("Saved message to Mongo DB '{}'", airData);
-        for (AirData data: airDataRepository.findAll()) {
-            System.out.println("printing Mongo DB");
-            System.out.println(data);
-            System.out.println(data.toString());
-        }
+        logger.info("Total message saved in Mongo DB is:  " + airDataRepository.findAll().size());
+
     }
 
     private void triggerActionAlert(String msg) {
-        System.out.println("Sending the Email Alert: " + msg);
+        System.out.println("\n\n!!!!!Sending the Email Alert: " + msg + "\n\n");
     }
 }

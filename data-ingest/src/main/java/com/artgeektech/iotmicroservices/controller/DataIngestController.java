@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.sql.Timestamp;
+import java.util.Date;
 
 
 @RestController
@@ -37,6 +37,8 @@ public class DataIngestController {
     }
 
     private void preprocess(AirData airData) {
-        airData.setTimestamp(new Timestamp(System.currentTimeMillis()));
+        airData.setTimestamp(new Date());
+        airData.setHumidity(Math.round(airData.getHumidity() * 100.0) / 100.0);
+        airData.setTemperature(Math.round(airData.getTemperature() * 100.0) / 100.0);
     }
 }

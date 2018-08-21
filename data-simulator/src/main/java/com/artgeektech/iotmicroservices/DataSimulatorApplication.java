@@ -10,7 +10,7 @@ import java.util.TimerTask;
 
 public class DataSimulatorApplication {
 
-    private static final String resourceUrl = "http://data-ingest:9001/iot/airdata/ingest";
+    private static final String resourceUrl = "http://localhost:9001/iot/airdata/ingest";
     private static final RestTemplate restTemplate = new RestTemplate();
     private static final Random random = new Random();
     private static double minVal = 10;

@@ -18,6 +18,11 @@ public class DataIngestApplication {
         return new TopicExchange(Constants.EXCHANGE_NAME);
     }
 
+//    @Bean
+//    public SimpMessagingTemplate simpMessagingTemplate() {
+//        return new SimpMessagingTemplate();
+//    }
+
     public static void main(String[] args) {
         SpringApplication.run(DataIngestApplication.class, args);
     }

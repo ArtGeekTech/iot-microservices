@@ -10,8 +10,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AirRawData implements Serializable {
-    private double temperature;
-    private double humidity;
-    private double pm2p5;
-    private double co2;
+    private Double temperature;
+    private Double humidity;
+    private Double pm2p5;
+    private Double co2;
 }

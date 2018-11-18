@@ -9,5 +9,7 @@ public class Constants {
 
     public static final String QUEUE_NAME = "AirDataQueue";
 
-    public static final String ROUTING_KEY = "airdata.ingested";
+    public static final String ROUTING_KEY_HISTORY = "airdata.history";
+
+    public static final String ROUTING_KEY_REALTIME = "airdata.realtime";
 }

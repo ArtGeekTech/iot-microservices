@@ -23,6 +23,7 @@ public class DataConsumerController {
     @Autowired
     private RuleEngineService ruleEngineService;
 
+
     @RabbitListener(queues = Constants.QUEUE_NAME)  // Subscribe to the Message Queue
     public void process(AirData airData) {
 

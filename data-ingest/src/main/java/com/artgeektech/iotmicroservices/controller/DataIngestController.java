@@ -2,7 +2,7 @@ package com.artgeektech.iotmicroservices.controller;
 
 import com.artgeektech.iotmicroservices.Constants;
 import com.artgeektech.iotmicroservices.model.AirData;
-import com.artgeektech.iotmicroservices.model.AirRawData;
+import com.artgeektech.iotmicroservices.model.AirInputData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Exchange;
@@ -24,29 +24,42 @@ public class DataIngestController {
 //    @Autowired
 //    private SimpMessagingTemplate messagingTemplate;
 
+
+//    @Autowired
+//    private RestTemplate restTemplate;
+
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @Autowired
     private Exchange exchange;
 
+
+
+
+
     @PostMapping("/airdata/ingest")  // validate payload from request body
-    public AirData ingest(@Valid @RequestBody AirRawData rawData) {
+    public AirData ingest(@Valid @RequestBody AirInputData rawData) {
         // preprocess
         AirData airData = preprocess(rawData);
+
         // publish to MQ
-        rabbitTemplate.convertAndSend(exchange.getName(), Constants.ROUTING_KEY, airData);
+        rabbitTemplate.convertAndSend(exchange.getName(), Constants.ROUTING_KEY_HISTORY, airData);
+
+        rabbitTemplate.convertAndSend(exchange.getName(), Constants.ROUTING_KEY_REALTIME, airData);
+
         logger.info("ingested data: " + airData.toString());
         return airData;
     }
 
 
 
-    private AirData preprocess(AirRawData rawData) {
+    private AirData preprocess(AirInputData rawData) {
         AirData airData = new AirData();
 
         // add more info from system
         airData.setTimestamp(new Date());
+//        airData.setSensorId()...
 
         // standardize data format
         airData.setHumidity(Math.round(rawData.getHumidity() * 100.0) / 100.0);

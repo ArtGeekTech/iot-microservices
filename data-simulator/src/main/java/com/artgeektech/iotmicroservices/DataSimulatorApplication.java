@@ -16,16 +16,20 @@ public class DataSimulatorApplication {
     private static double minVal = 10;
     private static double maxVal = 30;
     private static Timer timer = new Timer();
-    private static int interval = 1000;
+    private static int interval = 10;
 
     public static void main(String[] args) {
 
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+
                 AirRawData payload = new AirRawData(genRandom(), genRandom(), genRandom(), genRandom());
+
                 HttpEntity<AirRawData> request = new HttpEntity<>(payload);
+
                 restTemplate.postForObject(resourceUrl, request, Object.class);
+
             }
         }, 0, interval);
     }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 public class RuleEngineService {
 
     public void applyRules(AirData airData) {
+
         if (airData.getTemperature() > 50) {
             triggerActionAlert("Temperature too high!!");
         }

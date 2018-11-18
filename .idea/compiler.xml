@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="data-consumer" />
+        <module name="data-dashboard" />
         <module name="data-ingest" />
+        <module name="data-processor" />
         <module name="data-simulator" />
         <module name="service-registry" />
         <module name="serviceregistry" />

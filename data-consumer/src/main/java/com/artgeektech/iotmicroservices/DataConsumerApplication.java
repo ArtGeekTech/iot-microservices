@@ -30,7 +30,7 @@ public class DataConsumerApplication {
         return BindingBuilder
             .bind(queue)
             .to(dataExchange)
-            .with(Constants.ROUTING_KEY).noargs();
+            .with(Constants.ROUTING_KEY_HISTORY).noargs();
     }
 
     public static void main(String[] args) {

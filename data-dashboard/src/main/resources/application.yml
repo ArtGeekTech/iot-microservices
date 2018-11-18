@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: data-dashboard
+
+server:
+  port: 9004                    # 指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: data-dashboard         # 指定该Eureka实例的主机名
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka/

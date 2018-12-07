@@ -16,7 +16,7 @@ public class DataSimulatorApplication {
     private static double minVal = 10;
     private static double maxVal = 30;
     private static Timer timer = new Timer();
-    private static int interval = 10;
+    private static int interval = 1000;
 
     public static void main(String[] args) {
 

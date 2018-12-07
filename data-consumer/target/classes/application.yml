@@ -9,7 +9,7 @@ spring:
   data:
     mongodb:
       host: localhost
-      port: 27018
+      port: 27017
       database: airdata_db
 
 server:
